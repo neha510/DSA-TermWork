@@ -1,0 +1,10 @@
+RULE :
+Only one disk can move at a time. 
+At any point of time the larger disk should not be above smaller disk.
+
+If number of disk = N. 
+then,
+    number of steps to solve = 2^N-1
+    
+    time complexity = O(2^n)
+    space complexity = O(n)
