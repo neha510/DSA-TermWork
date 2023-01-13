@@ -1,0 +1,46 @@
+                    best     avg     worst
+//TIME COMPLEXITY : O(n)    O(n^2)   O(n^2)
+
+#include<iostream>
+using namespace std;
+
+//INSERTION SORT
+void InsertionSort(int arr[],int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        int key = arr[i];
+        int j = i-1;
+        
+        while(key<arr[j] && j>=0)
+        {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = key;
+    }
+        
+}
+//print array
+void display(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+int main()
+{
+    int arr[5];
+    int n =5;
+    cout<<"enter elements :";
+    for(int i=0;i<n; i++)
+    {
+        cin>>arr[i];
+    }
+    InsertionSort(arr,n);
+    cout<<"sorted array are :";
+    display(arr,n);
+
+    return 0;
+}
