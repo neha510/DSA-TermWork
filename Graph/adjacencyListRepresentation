@@ -1,0 +1,48 @@
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+void add_edges(vector<int> adj[],int u,int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
+}
+
+void print(vector<int> adj[], int V)
+{
+    for (int v = 0; v < V; ++v) {
+        cout << "\n"<< v;
+             
+        for (auto x : adj[v])
+            cout << "-> " << x;
+        cout<<endl;
+    }
+}
+
+int main()
+{
+    int v,n;
+    int p,q;
+    
+    cout<<"enter no of vertex :";
+    cin>>v;
+    
+    //array of list
+    vector<int>adj[v];
+    
+    cout<<"enter no of edges :";
+    cin>>n;
+    
+    cout<<"enter edges :";
+    for(int i=0;i<n;i++)
+    {
+        cin>>p>>q;
+        add_edges(adj,p,q);
+    }
+    
+    print(adj,v);
+
+    return 0;
+}
